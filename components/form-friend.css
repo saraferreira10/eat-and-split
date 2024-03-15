@@ -1,0 +1,13 @@
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: antiquewhite;
+}
+
+form .box_btn{
+    display: flex;
+    justify-content: flex-end;
+}

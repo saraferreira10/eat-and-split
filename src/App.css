@@ -1,0 +1,20 @@
+button {
+  cursor: pointer;
+}
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input {
+  font-size: 10px;
+  padding: 0.2rem 0.5rem;
+  outline: none;
+  border: 1px solid rgba(128, 128, 128, 0.486);
+  border-radius: 2px;
+  transform: border .2s;
+}
+
+input:focus{
+  border: 1px solid rgb(128, 128, 128);
+}
