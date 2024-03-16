@@ -1,7 +1,6 @@
-import Button from "./Button";
 import FriendCard from "./FriendCard";
 
-export default function ListFriends({ arr }) {
+export default function ListFriends({ arr, onSelectFriend, selectedFriend, onCloseCard }) {
     return (
         <div style={{
             display: "flex",
@@ -12,7 +11,7 @@ export default function ListFriends({ arr }) {
             <ul>
                 {arr.map((friend, idx) => (
                     <li key={idx}>
-                        <FriendCard name={friend.name} imgUrl={friend.imgUrl} debit={friend.debit} />
+                        <FriendCard id={friend.id} name={friend.name} imgUrl={friend.imgUrl} debit={friend.debit} onSelectFriend={onSelectFriend} selectedFriend={selectedFriend} onCloseCard={onCloseCard} />
                     </li>
                 ))}
             </ul>

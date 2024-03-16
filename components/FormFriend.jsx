@@ -4,7 +4,7 @@ import Input from "./Input";
 
 export default function Form({ isFormOpen, addFriend, inputName, setName, inputImg, setImg }) {
   return (
-    isFormOpen && <form style={{}}>
+    isFormOpen && <form>
 
       <Input text={"👫 Nome do amigo"} width={"100%"}>
         <input type="text" value={inputName} onChange={(e) => setName(e.target.value)} />
