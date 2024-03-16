@@ -22,4 +22,6 @@ input:focus{
 .card_app{
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 1rem;
 }

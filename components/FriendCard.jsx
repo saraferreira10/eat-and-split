@@ -21,17 +21,17 @@ export default function Card({ id, imgUrl = "", name, debit, onSelectFriend, sel
             </div>
 
             <div className="box_content">
-                <span>{name}</span>
+                <span>{name.charAt(0).toUpperCase() + name.slice(1)}</span>
                 {debit > 0 && (
-                    <p style={{ color: "red" }}>Você deve R$ {Number(debit)} a {name}</p>
+                    <p style={{ color: "red" }}>Você deve R$ {Number(debit)} a {name.charAt(0).toUpperCase() + name.slice(1)}</p>
                 )}
 
                 {debit < 0 && (
-                    <p style={{ color: "green" }}>{name} deve R$ {Math.abs(debit)} a você</p>
+                    <p style={{ color: "green" }}>{name.charAt(0).toUpperCase() + name.slice(1)} deve R$ {Math.abs(debit)} a você</p>
                 )}
 
                 {debit === 0 && (
-                    <p>Você e {name} estão quites</p>
+                    <p>Você e {name.charAt(0).toUpperCase() + name.slice(1)} estão quites</p>
                 )}
             </div>
 

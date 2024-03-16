@@ -15,8 +15,8 @@ function App() {
     },
     {
       id: 2,
-      name: "maria",
-      imgUrl: "../src/assets/imgProfile1.jpg",
+      name: "Pedro",
+      imgUrl: "../src/assets/imgProfile2.jpg",
       debit: -100
     },
 
@@ -76,6 +76,18 @@ function App() {
     return friend ? friend.name : "";
   }
 
+  function splitABill(debit) {
+    const updatedArray = list.map(item => {
+      if (item.id === selectedFriend) {
+        return { ...item, debit: item.debit + debit };
+      }
+      return item;
+    });
+
+    setList(updatedArray);
+  }
+
+
   return (
     <>
       <div className="card_app">
@@ -96,7 +108,7 @@ function App() {
         </div>
 
         <div>
-          {selectedFriend !== -1 && <CardBill name={returnName()} />}
+          {selectedFriend !== -1 && <CardBill name={returnName()} splitABill={splitABill} />}
         </div>
       </div>
     </>
