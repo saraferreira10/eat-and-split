@@ -8,13 +8,13 @@ import CardBill from '../components/CardBill';
 function App() {
   const friendsArr = [
     {
-      id: 1,
+      id: 0,
       name: "Rebeca",
       imgUrl: "../src/assets/imgProfile1.jpg",
       debit: 200
     },
     {
-      id: 2,
+      id: 1,
       name: "Pedro",
       imgUrl: "../src/assets/imgProfile2.jpg",
       debit: -100
@@ -39,7 +39,7 @@ function App() {
 
   function createFriend(name, imgUrl, debit) {
     return {
-      id: Date.now(),
+      id: list.length,
       name: name,
       imgUrl: imgUrl,
       debit: debit
@@ -108,7 +108,7 @@ function App() {
         </div>
 
         <div>
-          {selectedFriend !== -1 && <CardBill name={returnName()} splitABill={splitABill} />}
+          {selectedFriend !== -1 && <CardBill key={selectedFriend} name={returnName()} splitABill={splitABill} />}
         </div>
       </div>
     </>

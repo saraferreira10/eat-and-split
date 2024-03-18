@@ -15,7 +15,7 @@ export default function Card({ id, imgUrl = "", name, debit, onSelectFriend, sel
     }
 
     return (
-        <div className="card">
+        <div className="card" style={{ backgroundColor: selectedFriend === id && "antiquewhite" }}>
             <div>
                 <div style={divImg}></div>
             </div>
