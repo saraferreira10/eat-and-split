@@ -3,8 +3,10 @@ import "./friend-card.css";
 
 export default function Card({ id, imgUrl = "", name, debit, onSelectFriend, selectedFriend, onCloseCard }) {
 
+    let unsplahRandom = 'https://source.unsplash.com/800x600/?person';
+
     const divImg = {
-        backgroundImage: imgUrl !== null && imgUrl !== "" ? `url(${imgUrl})` : "url('https://cdn.vectorstock.com/i/preview-1x/66/14/default-avatar-photo-placeholder-profile-picture-vector-21806614.jpg')",
+        backgroundImage: imgUrl !== null && imgUrl !== "" ? `url(${imgUrl})` : `url(${unsplahRandom})`,
         width: "2rem",
         height: "2rem",
         backgroundSize: "cover",

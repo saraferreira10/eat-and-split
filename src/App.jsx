@@ -29,6 +29,7 @@ function App() {
   const [selectedFriend, setSelectedFriend] = useState(-1);
 
   function closeForm() {
+    clearInputs();
     setFormOpen(false);
   }
 
@@ -63,6 +64,7 @@ function App() {
 
   function selectFriend(id) {
     if (id === selectedFriend) return;
+    clearInputs();
     setFormOpen(false)
     setSelectedFriend(id);
   }
@@ -95,7 +97,7 @@ function App() {
           <ListFriends arr={list} onSelectFriend={selectFriend} selectedFriend={selectedFriend} onCloseCard={closeBillCard} />
 
           <div style={{ display: "flex", justifyContent: "flex-end" }}>
-            <FormFriend closeForm={closeForm} isFormOpen={(isFormOpen && selectedFriend === -1)} addFriend={addFriend} inputName={inputName} setName={setinputName} inputImg={inputImg} setImg={setinputImg} />
+            {(isFormOpen) && <FormFriend closeForm={closeForm} isFormOpen={(isFormOpen && selectedFriend === -1)} addFriend={addFriend} inputName={inputName} setName={setinputName} inputImg={inputImg} setImg={setinputImg} />}
             {(!isFormOpen && selectedFriend === -1) && <Button paddingX={"1rem"} paddingY={"0.5rem"} text={"Adicionar novo amigo"} fontSize={"10px"} onClick={openForm} />
             }
           </div>

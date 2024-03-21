@@ -1,13 +1,23 @@
+import { useEffect, useRef } from "react";
 import Button from "./Button";
 import "./form-friend.css";
 import Input from "./Input";
 
 export default function Form({ isFormOpen, addFriend, inputName, setName, inputImg, setImg }) {
+
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [])
+
   return (
     isFormOpen && <form>
 
-      <Input text={"👫 Nome do amigo"} width={"100%"}>
-        <input type="text" value={inputName} onChange={(e) => setName(e.target.value)} />
+      <Input text={"👫 Nome do amigo"} width={"100%"} >
+        <input type="text" value={inputName} onChange={(e) => setName(e.target.value)} ref={inputRef} />
       </Input>
 
       <Input text={"🖼️ URL da imagem"} width={"100%"}>

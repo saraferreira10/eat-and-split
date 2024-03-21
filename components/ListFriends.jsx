@@ -10,9 +10,7 @@ export default function ListFriends({ arr, onSelectFriend, selectedFriend, onClo
         }}>
             <ul>
                 {arr.map((friend, idx) => (
-                    <li key={idx}>
-                        <FriendCard id={friend.id} name={friend.name} imgUrl={friend.imgUrl} debit={friend.debit} onSelectFriend={onSelectFriend} selectedFriend={selectedFriend} onCloseCard={onCloseCard} />
-                    </li>
+                        <FriendCard key={idx} id={friend.id} name={friend.name} imgUrl={friend.imgUrl} debit={friend.debit} onSelectFriend={onSelectFriend} selectedFriend={selectedFriend} onCloseCard={onCloseCard} />
                 ))}
             </ul>
 
